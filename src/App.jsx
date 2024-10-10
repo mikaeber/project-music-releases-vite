@@ -1,6 +1,8 @@
 import data from "./data.json";
-import { Album } from "./components/Album";
 import "./App.css";
+import { AlbumCover } from "./components/AlbumCover";
+import { AlbumTitle } from "./components/AlbumTitle";
+import { ArtistName } from "./components/ArtistName";
 
 console.log(data);
 
@@ -10,14 +12,14 @@ export const App = () => {
   return (
     <div className="container">
       {albums.map((album) => (
-        <Album
-          key={album.id}
-          title={album.name}
-          image={album.images[0].url}
-          artist={album.artists[0].name}
-          artistUrl={album.artists[0].external_urls.spotify}
-          titleUrl={album.external_urls.spotify}
-        />
+        <div className="album" key={album.id}>
+          <AlbumCover image={album.images[0].url} />
+          <AlbumTitle title={album.name} url={album.external_urls.spotify} />
+          <ArtistName
+            names={album.artists.map(artist => artist.name)}
+            urls={album.artists.map(artist => artist.external_urls.spotify)}
+          />
+        </div>
       ))}
     </div>
   );
