@@ -5,6 +5,45 @@
   background-color: #000000;
 }
 
+body {
+  background-color: #000000;
+  overflow-x: hidden;
+}
+
+header {
+  padding: 20px;
+  margin: 10px;
+  display: flex;
+  animation: scroll-vertical 20s linear infinite;
+}
+
+.title {
+  margin: 40px 0 40px 50px;
+  font-size: 30px;
+  font: Helvetica;
+  font-family: Helvetica, sans-serif;
+  opacity: 0.8;
+}
+
+header img {
+  width: 120px;
+  height: 120px;
+}
+
+@keyframes scroll-vertical {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.editors-picks {
+  margin: 40px;
+  padding: 10px;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -40,6 +79,7 @@ p {
   color: #a0a0a0;
   padding: 0;
   margin-top: 3px;
+  margin-bottom: 10px;
 }
 
 img {
@@ -93,4 +133,16 @@ p:hover {
 .icon:hover {
   transform: scale(1.4);
   opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .album {
+    max-width: 100%;
+  }
+  header {
+    animation: scroll-vertical 6s linear infinite;
+  }
+  .album {
+    margin: 0px auto;
+  }
 }
