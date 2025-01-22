@@ -15,6 +15,10 @@ header {
   margin: 10px;
   display: flex;
   animation: scroll-vertical 20s linear infinite;
+  min-width: fit-content;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: repeat-x;
 }
 
 .title {
@@ -145,7 +149,7 @@ p:hover {
     margin: 10px;
   }
   header {
-    animation: scroll-vertical 6s linear infinite;
+    animation: scroll-vertical 20s linear infinite;
   }
   .album {
     margin: 0px auto;
